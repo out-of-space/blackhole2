@@ -1,0 +1,11 @@
+<div>
+    <ul class="comments">
+        <li 
+        *ngFor="let comment of commentsStateService.comments.slice().reverse() let i = index;" >
+        {{comment.text}}
+   
+        </li>
+      </ul>
+</div>
+
+<!-- *ngFor="let comment of commentsStateService.comments.slice().reverse() let i = index;" > -->
