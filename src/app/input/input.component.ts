@@ -42,6 +42,8 @@ export class InputComponent implements OnInit {
   .subscribe(comment => {
    console.log(comment);
    });
+   this.comment=new CClass;
+
 }
 
 //   throw() {

@@ -8,18 +8,28 @@ import {CommentsStateService} from '../services/comments-state.service'
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
-
+  interval: any;
   public comments = [];
   public errorMsg;
   constructor(public commentsStateService: CommentsStateService) { }
 
+
   ngOnInit() {
-    this.commentsStateService.getComments().subscribe(
+    this.refreshData();
+    this.interval = setInterval(()=> {
+      this.refreshData();
+    },1000)
+ 
+  }
+
+
+  refreshData(){
+       this.commentsStateService.getComments().subscribe(
       comments => {
       console.log("success!")
       this.commentsStateService.comments = comments;
       }
-    );
+    )
   }
   ngOnChanges() {
 
