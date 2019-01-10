@@ -30,10 +30,15 @@ export class InputComponent implements OnInit {
   }
 
 
+ onEnter() {
 
+  this.saveComment();
+ 
+ }
  saveComment() {
  
 
+  if(this.comment.text){
   // console.log(this.cat);
   console.log(this.comment.id);
   console.log(this.comment.text);
@@ -43,7 +48,7 @@ export class InputComponent implements OnInit {
    console.log(comment);
    });
    this.comment=new CClass;
-
+  }
 }
 
 //   throw() {

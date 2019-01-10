@@ -18,7 +18,7 @@ export class CommentsComponent implements OnInit {
     this.refreshData();
     this.interval = setInterval(()=> {
       this.refreshData();
-    },1000)
+    },3000)
  
   }
 
